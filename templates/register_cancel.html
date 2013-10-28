@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+
+{% if request.method == 'POST' %}
+
+	<p>Your registration has been successfully <b>cancelled</b>.</p>
+
+{% else %}
+
+	<p>Are you sure you want to cancel the registration for: <b>{{firstName}} {{lastName}}</b>?</p>
+	<form method="POST">
+		<input name=_csrf_token type=hidden value="{{ csrf_token() }}">
+		<input type="submit" name="cancel" value="Cancel Registration">
+	</form>
+
+{% endif %}
+
+{% endblock %}

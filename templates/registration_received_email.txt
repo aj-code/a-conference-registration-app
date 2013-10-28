@@ -1,0 +1,11 @@
+A registration for YOUR CONFERENCE on the DATE has been received but is currently UNCONFIRMED.
+
+To confirm your registration please click this link:
+https://EXAMPLE.COM/manage/{{token}}/confirm
+
+
+If your registration is not confirmed within 12 hours it will be removed.
+
+	
+----------
+https://EXAMPLE.COM/YOUR_CON_HERE

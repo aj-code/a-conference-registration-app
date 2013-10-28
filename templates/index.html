@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<script>
+
+	$().ready(function() {
+
+		$("#beginForm").validate({
+			rules: {
+				firstName: {
+					required: true,
+				},
+				lastName: {
+					required: true,
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				additionalEmail:{
+					email: true
+				},
+			},
+			messages: {
+				email: "Please enter a valid email address",
+				firstName: "First Name is required",
+				lastName: "Last Name is required",
+			}
+		});
+	});
+
+</script>
+
+
+{% if not regMaxedOut %}
+
+<div style="width: 300px; text-align: left; margin-left: auto; margin-right: auto;">
+	<form id="beginForm" method="POST" action="/register">
+	
+		<!-- No BREACH for youz -->
+		<input name=_csrf_token type=hidden value="{{ csrf_token() }}">
+
+		<label for="firstName">First Name</label>
+		<input type="text" id="firstName" name="firstName" />
+
+		<label for="lastName">Last Name</label>
+		<input type="text" id="lastName" name="lastName" />
+		
+		<label for="affiliation">Affiliation/Company</label>
+		<input type="text" id="affiliation" name="affiliation" />
+		
+		
+		<label for="region">Region</label>
+		<select id="region" name="region">
+			<option value="unselected">Select One</option>
+			<option value="Auckland">Auckland</option>
+			<option value="Bay of Plenty">Bay of Plenty</option>
+			<option value="Gisborne">Gisborne</option>
+			<option value="Hawke's Bay">Hawke's Bay</option>
+			<option value="Manawatu-Wanganui">Manawatu-Wanganui</option>
+			<option value="Northland">Northland</option>
+			<option value="Taranaki">Taranaki</option>
+			<option value="Waikato">Waikato</option>
+			<option value="Wellington">Wellington</option>
+			<option value="Canterbury">Canterbury</option>
+			<option value="Marlborough">Marlborough</option>
+			<option value="Nelson">Nelson</option>
+			<option value="Otago">Otago</option>
+			<option value="Southland">Southland</option>
+			<option value="Tasman">Tasman</option>
+			<option value="West Coast">West Coast</option>
+		</select>
+
+		<label for="email">Attendee's Email <small>(must be actually valid)</small></label>
+		<input type="text" id="email" name="email" />
+		
+		<label for="additionalEmail">
+			Additional Email<br />
+			<small>(e.g. another person who can manage this registration)</small>
+		</label>
+		<input type="text" id="additionalEmail" name="additionalEmail" />
+		
+		<input type="submit" value="Register">
+		
+		<p>
+			<small>
+			If you have any issues, please contact:<br />
+			<a href="mailto:SOMEONE@EXAMPLE.COM">SOMEONE@EXAMPLE.COM</a>
+			</small>
+		</p>
+	
+	</form>
+</div>
+
+{% else %}
+
+<p>Registrations are currently full.</p>
+<p>Please try again later as some spaces may become available due to cancellations.</p>
+
+{% endif %}
+
+{% endblock %}

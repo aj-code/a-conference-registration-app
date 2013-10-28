@@ -1,0 +1,6 @@
+
+The registration for {{name}} has been successfully CANCELLED.
+
+	
+----------
+https://EXAMPLE.COM/YOUR_CON_HERE

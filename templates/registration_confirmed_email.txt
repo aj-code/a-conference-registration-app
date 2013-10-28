@@ -1,0 +1,17 @@
+Thank for you registering for YOUR CONFERENCE on the DATE.
+
+Your registration details are as follows:
+
+{{firstName}} {{lastName}}
+Affiliation: {{affiliation}}
+Region: {{region}}
+
+If these details are incorrect, please cancel your registration and try again.
+
+To cancel at anytime, click here: https://EXAMPLE.COM/manage/{{token}}/cancel
+
+If you discover you cannot attend, please cancel as soon as possible to make room for other attendees.
+
+	
+----------
+https://EXAMPLE.COM/YOUR_CON_HERE
